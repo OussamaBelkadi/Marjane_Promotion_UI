@@ -1,0 +1,8 @@
+<p>home works!</p>
+<table class="table">
+  <tr *ngFor="let product of products">
+    <td class="">{{product.price}}</td>
+    <td>{{product.name}}</td>
+    <td><button (click)="handleCheckPromotion(product)" [class]="product.checked?'bg-amber-300 text-amber-50':'bg-red-400 text-amber-50'">checked</button></td>
+  </tr>
+</table>

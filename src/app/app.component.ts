@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'promotion_front';
+  action : Array<any> = [
+    {title: "home" , path: "/home"},
+    {title: "about" , path: "/promotion"},
+  ]
+  currentAction : any;
+
+  setCurrentAction(action: any){
+    this.currentAction = action;
+  }
 }

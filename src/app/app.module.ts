@@ -10,6 +10,9 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import { NewPromotionComponent } from './new-promotion/new-promotion.component';
 import { PromotionDashbordComponent } from './promotion-dashbord/promotion-dashbord.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from "@angular/material/button";
+import { ResponsableRayonComponent } from './responsable-rayon/responsable-rayon.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -26,13 +29,16 @@ const routes: Routes = [
     HomeComponent,
     NewPromotionComponent,
     PromotionDashbordComponent,
+    ResponsableRayonComponent,
   ],
   imports: [
     // import another remote module
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [
   // define the service

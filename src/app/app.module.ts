@@ -13,23 +13,22 @@ import { PromotionDashbordComponent } from './promotion-dashbord/promotion-dashb
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
 import { ResponsableRayonComponent } from './responsable-rayon/responsable-rayon.component';
+import { ResponsabledashbordComponent } from './responsabledashbord/responsabledashbord.component';
 
-const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
-  // You can add more routes as needed
-];
+// const routes: Routes = [
+//   { path: 'home',loadChildren()=>import('./home/home.module').then((m) => m.HomeModule),},
+//   { path: 'about', component: AboutComponent },
+//   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
+
+// ];
 
 @NgModule({
   declarations: [
     // define all component will containing the web component
     AppComponent,
-    AboutComponent,
-    HomeComponent,
     NewPromotionComponent,
-    PromotionDashbordComponent,
-    ResponsableRayonComponent,
+    ResponsabledashbordComponent,
+
   ],
   imports: [
     // import another remote module

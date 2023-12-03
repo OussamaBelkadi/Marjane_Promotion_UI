@@ -9,6 +9,7 @@ import {PromotionService} from "../services/promotion.service";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
+  Os:string = "os"
   products :Array<Product> = []  ;
   constructor(private http:HttpClient, private prometionService:PromotionService) {
   }
@@ -36,5 +37,6 @@ export class HomeComponent implements OnInit{
       }
     )
   }
+
 }
 

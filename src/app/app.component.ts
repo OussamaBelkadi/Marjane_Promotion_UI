@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'promotion_front';
+  Os:String = "os"
   action : Array<any> = [
     {title: "home" , path: "/home"},
     {title: "about" , path: "/promotion"},

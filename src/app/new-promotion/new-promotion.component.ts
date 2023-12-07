@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {ProductDto} from "../../module/productDto";
+import {PromotionDto} from "../../module/promotionDto";
+import {PromotionService} from "../services/promotion.service";
 
 @Component({
   selector: 'app-new-promotion',
@@ -8,16 +11,42 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 })
 export class NewPromotionComponent implements OnInit{
   public promotionForm!:FormGroup;
-  constructor(private fb:FormBuilder) {
+  private bodyCreatePromo!:Array<any>;
+  private requestBody:any;
+  constructor(private fb: FormBuilder, private promotionService:PromotionService) {
   }
   ngOnInit() {
     this.promotionForm = this.fb.group({
-      name : this.fb.control(''),
-      price : this.fb.group(''),
-      checked : this.fb.group(false)
+      produit : this.fb.control(''),
+      description: this.fb.control(''),
+      dateDebut: this.fb.control(''),
+      dateFin: this.fb.control(''),
+      precentage : this.fb.control('0', Validators.max(90))
+
     })
   }
   savePromotion(){
+    let formValue = this.promotionForm.value;
+    const productId = formValue.produit;
+    const descr = formValue.description;
+    const dateDebut = formValue.dateDebut;
+    const datefin = formValue.dateFin;
+    const percentage = formValue.precentage;
 
+    const productDto = new ProductDto(productId)
+    const promotionDto =new PromotionDto(descr,dateDebut,datefin, percentage)
+    this.requestBody = {
+      produitDto: productDto,
+      promotionDto: promotionDto
+    }
+    this.promotionService.ajouterPromotion(this.requestBody).subscribe({
+        next: value =>{
+          this.requestBody=value;
+        },
+        error: err => console.log(err)
+      }
+
+    )
+    console.log(this.requestBody)
   }
 }

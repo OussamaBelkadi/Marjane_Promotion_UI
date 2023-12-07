@@ -99,7 +99,7 @@
         <!-- Caja pequeña 1 -->
         <div
           class="flex-1 bg-blue-700 rounded-lg flex flex-col items-center justify-center p-4 space-y-2 border border-gray-200 m-2">
-          <i class="fas fa-hand-holding-usd text-white text-4xl"></i>
+          <i class="fas fa-sliders text-white text-4xl"></i>
           <p class="text-white">Depositar</p>
         </div>
 
@@ -131,6 +131,7 @@
             </svg>
             <strong>30 done</strong> this month
           </p>
+
         </div>
         <button aria-expanded="false" aria-haspopup="menu" id=":r5:" class="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-8 max-w-[32px] h-8 max-h-[32px] rounded-lg text-xs text-blue-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30" type="button">
               <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
@@ -140,69 +141,7 @@
               </span>
         </button>
       </div>
-      <div class="p-6 w-full overflow-x-scroll px-0 pt-0 pb-2">
-        <table class="w-full min-w-[840px] table-auto">
-          <thead>
-          <tr>
-            <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
-              <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">Promotin</p>
-            </th>
-            <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
-              <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">Date debut</p>
-            </th>
-            <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
-              <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">Description </p>
-            </th>
-            <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
-              <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">Status </p>
-            </th>
-            <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
-              <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">Precentage </p>
-            </th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let promotion of promotion">
-            <td class="py-3 px-5 border-b border-blue-gray-50">
-              <div class="flex items-center gap-4">
-                <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">Promotion {{promotion.id}}</p>
-              </div>
-            </td>
 
-            <td class="py-3 px-5 border-b border-blue-gray-50">
-              <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">{{promotion.dateDebut}}</p>
-            </td>
-
-            <td class="py-3 px-2 border-b border-blue-gray-50">
-              <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">{{promotion.description}}</p>
-            </td>
-            <td class="py-3 px-2 border-b border-blue-gray-50">
-              <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">{{promotion.status}}</p>
-            </td>
-            <td class="py-3 px-4 border-b border-blue-gray-50">
-              <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">{{promotion.precentage}}%</p>
-            </td>
-            <td class="py-3 px-5 border-b border-blue-gray-50 hover:text-red-600">
-              <button class="fas fa-trash"></button>
-            </td>
-
-          </tr>
-
-
-          </tbody>
-          <ul class="inline-flex -space-x-px mx-auto my-2 ml-96" >
-            <li  *ngFor="let i of generatePage()">
-              <button (click)="changePage(i)" class='bg-gray-300 border border-gray-300 text-gray-500 hover:bg-gray-100 hover:text-gray-700 leading-tight py-2 px-3 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' >{{i+1}}</button>
-            </li>
-
-
-          </ul>
-        </table>
-        <input (click)="can()" [class]="canSave? 'bg-blue-600':'bg-amber-300'">
-
-        <div [ngStyle]="currentStypeMulti"> ttrr</div>
-
-      </div>
     </div>
   </div>
 </div>

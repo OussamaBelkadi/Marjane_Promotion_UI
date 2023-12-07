@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { PromotionDashbordRoutingModule } from './promotion-dashbord-routing.module';
 import {PromotionDashbordComponent} from "./promotion-dashbord.component";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [PromotionDashbordComponent],
   imports: [
-    CommonModule,
-    PromotionDashbordRoutingModule
+    PromotionDashbordRoutingModule,
+    FormsModule,
+    CommonModule
+
   ]
 })
 export class PromotionDashbordModule { }

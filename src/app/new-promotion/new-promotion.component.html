@@ -1,6 +1,10 @@
 <p>new-promotion works!</p>
 <form [formGroup]="promotionForm" (ngSubmit)="savePromotion()">
-  <input class="border-double" formControlName="name">
-  <input class="border" formControlName="price">
-  <input class="border-b-amber-800" formControlName="checked">
+  <input class="border-double" formControlName="produit">
+  <input class="border" type="date" formControlName="dateDebut">
+  <input class="border" type="date" formControlName="dateFin">
+  <input class="border" type="text" formControlName="description">
+  <input class="border" type="number" formControlName="precentage">
+  <button  type="submit">Ajouter</button>
+
 </form>

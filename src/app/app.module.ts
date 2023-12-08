@@ -45,7 +45,10 @@ import {CommonModule} from "@angular/common";
 
   ],
   providers: [
-  // define the service
+    // define the service
+  ],
+  exports: [
+
   ],
   bootstrap: [
     // define the first component will be displayed, when we have the multiple  web component

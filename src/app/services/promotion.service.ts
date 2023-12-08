@@ -9,7 +9,12 @@ import {environment} from "src/environments/environment";
 export class PromotionService {
 
   constructor(private http:HttpClient) { }
-
+  getProduit(){
+    return this.http.get(`${environment.apiUrl}/api/v1/categories`)
+  }
+  getStatisticPromo(){
+    return this.http.get(`${environment.apiUrl}/api/v1/statistics/promotions/royaume`)
+  }
   getPromotionResponsable(centreid:any){
     return this.http.get(`${environment.apiUrl}/api/v1/promotions/${centreid}`)
   }

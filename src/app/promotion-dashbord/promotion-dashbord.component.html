@@ -120,7 +120,7 @@
     </div>
   </div>
 
-  <div class="my-4 grid grid-cols-1 gap-6 xl:grid-cols-3">
+  <div class="my-4 grid grid-cols-1 gap-6 ">
     <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md overflow-hidden xl:col-span-2">
       <div class="relative bg-clip-border rounded-xl overflow-hidden bg-transparent text-gray-700 shadow-none m-0 flex items-center justify-between p-6">
         <div>
@@ -190,17 +190,13 @@
 
 
           </tbody>
-          <ul class="inline-flex -space-x-px mx-auto my-2 ml-96" >
+          <ul class="inline-flex -space-x-px mx-auto my-2 ml-16" >
             <li  *ngFor="let i of generatePage()">
               <button (click)="changePage(i)" class='bg-gray-300 border border-gray-300 text-gray-500 hover:bg-gray-100 hover:text-gray-700 leading-tight py-2 px-3 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' >{{i+1}}</button>
             </li>
 
-
           </ul>
         </table>
-        <input (click)="can()" [class]="canSave? 'bg-blue-600':'bg-amber-300'">
-
-        <div [ngStyle]="currentStypeMulti"> ttrr</div>
 
       </div>
     </div>
@@ -211,7 +207,6 @@
 <!-- Script  -->
 <script>
 
-  // Agregar lógica para mostrar/ocultar la navegación lateral al hacer clic en el ícono de menú
   const menuBtn = document.getElementById('menuBtn');
   const sideNav = document.getElementById('sideNav');
 

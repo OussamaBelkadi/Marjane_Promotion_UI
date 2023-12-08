@@ -8,6 +8,8 @@ import {PromotionService} from "../services/promotion.service";
 })
 export class ResponsabledashbordComponent implements OnInit{
   promotion: any;
+  requestPgPromotion!: any;
+  responsePg!:any;
   requestPromotion: any = Array();
   constructor(private service_Responsable: PromotionService) {
   }
@@ -15,12 +17,16 @@ export class ResponsabledashbordComponent implements OnInit{
     this.getPromotion();
   }
   getPromotion(){
-    this.service_Responsable.getPromotionResponsable(1).subscribe({
-        next : data =>{
-          this.promotion = data;
-        },
-        error: err =>{
-          console.log(err);
+    this.requestPgPromotion = {
+      'id': 1,
+      'page': 0,
+      'size': 10
+    }
+    this.service_Responsable.getPromotionResponsablePage(this.requestPgPromotion).subscribe(
+      {
+        next :data => {
+          this.responsePg = data;
+          this.promotion = this.responsePg.promotionList;
         }
       }
     )

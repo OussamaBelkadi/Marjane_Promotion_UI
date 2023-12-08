@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POC WCS</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+
+<body class="bg-gray-200">
+<nav class="bg-white border-b border-gray-300">
+  <div class="flex justify-between items-center px-9">
+    <!-- Aumenté el padding aquí para añadir espacio en los lados -->
+    <!-- Ícono de Menú -->
+    <button id="menuBtn">
+      <i class="fas fa-bars text-black text-lg"></i>
+    </button>
+
+    <!--     Logo -->
+    <div class="ml-1">
+      <img src="https://www.marjane.ma/icons/logo_marjane.svg" alt="logo" class="h-20 w-28">
+    </div>
+
+    <!-- Ícono de Notificación y Perfil -->
+    <div class="space-x-4">
+      <button>
+        <i class="fas fa-bell text-black text-lg"></i>
+      </button>
+
+      <!-- Botón de Perfil -->
+      <button>
+        <i class="fas fa-user text-black text-lg"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Barra lateral -->
+<div id="sideNav" class="lg:block hidden bg-blue-700 w-64 h-screen fixed rounded-none border-none">
+  <!-- Items -->
+  <div class="p-4 space-y-4">
+    <!-- Inicio -->
+    <a href="#" aria-label="dashboard"
+       class="relative px-4 py-3 flex items-center space-x-4 rounded-lg text-black bg-gradient-to-r from-white to-white">
+      <i class="fas fa-home text-black"></i>
+      <span class="-mr-1 font-medium">Principale</span>
+    </a>
+
+    <a routerLink="/statistic" class="px-4 py-3 flex items-center space-x-4 rounded-md text-white group hover:bg-amber-400">
+      <i class="fas fa-chart-area"></i>
+      <span>Statistic</span>
+    </a>
+    <a href="#" class="px-4 py-3 flex items-center space-x-4 rounded-md text-white group hover:bg-amber-400">
+      <i class="fas fa-exchange-alt"></i>
+      <span>Transiction</span>
+    </a>
+    <a href="#" class="px-4 py-3 flex items-center space-x-4 rounded-md text-white group hover:bg-amber-400">
+      <i class="fas fa-user"></i>
+      <span>Utilisateur</span>
+    </a>
+    <a href="#" class="px-4 py-3 flex items-center space-x-4 rounded-md text-white group hover:bg-amber-400">
+      <i class="fas fa-sign-out-alt"></i>
+      <span>Cerrar sesión</span>
+    </a>
+  </div>
+</div>
+
+<div class="lg:ml-64 lg:pl-4 lg:flex lg:flex-col lg:w-75% mt-5 mx-2">
+  <!-- Contenedor Principal -->
+  <div class="lg:flex gap-4 items-stretch">
+
+
+    <div class="bg-white p-4 rounded-lg xs:mb-4 max-w-full shadow-md lg:w-[65%]" *ngIf="promotionData">
+      <!-- Cajas pequeñas -->
+      <div class="flex flex-wrap justify-between h-full" >
+        <!-- Caja pequeña 1 -->
+        <div class="flex-1 bg-blue-700 rounded-lg flex flex-col items-center justify-center p-4 space-y-2 border border-gray-200 m-2" *ngFor="let pro of promotionData;">
+          <i class="fas fa-diagram-project text-white text-4xl"></i>
+          <p class="text-white font-bold  font-light">{{pro.status}}</p>
+          <p class="text-amber-50 font-bold">{{pro.size}}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Script  -->
+<script>
+
+  // Agregar lógica para mostrar/ocultar la navegación lateral al hacer clic en el ícono de menú
+  const menuBtn = document.getElementById('menuBtn');
+  const sideNav = document.getElementById('sideNav');
+
+  menuBtn.addEventListener('click', () => {
+    sideNav.classList.toggle('hidden');
+  });
+</script>
+</body>
+
+</html>

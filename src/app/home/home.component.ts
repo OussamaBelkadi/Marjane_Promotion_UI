@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit{
     this.prometionService.getProduct()
       .subscribe({
         // Tous passe bien
-        next : data => {
+        next  : data => {
           this.products = data
         },
         error: err =>{
